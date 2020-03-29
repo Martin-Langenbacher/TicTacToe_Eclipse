@@ -41,6 +41,7 @@ public class TicTacToe {
 				break;
 			
 			b.minimax(0, Board.PLAYER_X);
+			System.out.println();
 			System.out.println("Computer choose postion : " + b.computerMove);
 			
 			b.placeAMove(b.computerMove, Board.PLAYER_X);
