@@ -31,7 +31,8 @@ public class TicTacToe {
 				
 				System.out.println("Your move : ");
 				Point userMove = new Point(scanner.nextInt(), scanner.nextInt());
-				moveOk = b.placeAMove(userMove, Board.PLAYER_O);
+				b.placeAMove(userMove, Board.PLAYER_O);
+				
 				
 			} while (!moveOk);
 			
@@ -41,6 +42,7 @@ public class TicTacToe {
 				break;
 			
 			b.minimax(0, Board.PLAYER_X);
+			//System.out.println("DAs kommt von minimax zurück: " + b.minimax(0, Board.PLAYER_X));
 			System.out.println();
 			System.out.println("Computer choose postion : " + b.computerMove);
 			

@@ -106,10 +106,10 @@ public class Board {
 			Point point = availableCells.get(i);
 
 //===========================================================================================================				
-			// now, we go thourough all available seats to maximize for X and minimize for O
+			// now, we go through all available seats to maximize for X and minimize for O
 			if (turn == PLAYER_X) {
 				placeAMove(point, PLAYER_X);
-				// now we start the minimay for the other player !!!
+				// now we start the minimax for the other player !!!
 				int currentScore = minimax(depth + 1, PLAYER_O);
 				max = Math.max(currentScore, max);
 				
@@ -144,10 +144,12 @@ public class Board {
 					break;
 				}
 				
-			}
+			} 
 			board[point.x][point.y] = NO_PLAYER;
 			
 		}
+		// Elvis Operator: Bedingung wird ausgegeben: Falls true ==> max, falls false ==> min!
+		// Einzig Zweistellige-Operator
 		return turn == PLAYER_X ? max : min;
 	}
 	
